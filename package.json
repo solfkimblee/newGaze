@@ -1,0 +1,16 @@
+{
+  "name": "gaze",
+  "private": true,
+  "workspaces": [
+    "gaze/frontend",
+    "gaze/backend"
+  ],
+  "scripts": {
+    "dev:backend": "cd gaze/backend && npm run dev",
+    "dev:frontend": "cd gaze/frontend && npm run dev",
+    "dev": "concurrently -n backend,frontend -c magenta,cyan \"npm:dev:backend\" \"npm:dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
